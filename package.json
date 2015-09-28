@@ -1,6 +1,6 @@
 {
   "name": "geo-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Geolocation Manager for fast lookup, insertion, and deletion.",
   "main": "index.js",
   "directories": {
