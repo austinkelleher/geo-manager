@@ -28,7 +28,7 @@ function binaryClosest(arr, num) {
 */
 function _generateManagedItem(item) {
   if (!item.distance || !item.lat || !item.lon) {
-    throw Error('Incorrect item format provided');
+    throw new Error('Incorrect item format provided');
   }
 
   return {
@@ -66,13 +66,10 @@ function GeoManager(options) {
   // ]
   this.managed = [];
 
-  this.pivotLat = options.lat;
-  this.pivotLon = options.lon;
-  this.minDistance = options.minDistance;
-
-  if (!this.pivotLat || !this.pivotLon || !this.minDistance) {
-    throw Error('Must include latitude and longitude in GeoManager constructor');
-  }
+  // Defaults to New York City and 10 miles
+  this.pivotLat = options.lat || 40.7127;
+  this.pivotLon = options.lon || 74.0059;
+  this.minDistance = options.minDistance || 10;
 }
 
 GeoManager.prototype = {
@@ -90,7 +87,7 @@ GeoManager.prototype = {
     var lon = options.lon;
 
     if (!lat || !lon) {
-      throw Error('Must include latitude and longitude in GeoManager add');
+      throw new Error('Must include latitude and longitude in GeoManager add');
     }
 
     var distance = Geo.distanceCalculation(lat, lon, this.pivotLat, this.pivotLon);
@@ -165,7 +162,7 @@ GeoManager.prototype = {
     var lon = options.lon;
 
     if (!lat || !lon) {
-      throw Error('Must include latitude and longitude in delete');
+      throw new Error('Must include latitude and longitude in delete');
     }
 
     var data = options.data;
@@ -210,7 +207,7 @@ GeoManager.prototype = {
     var lon = options.lon;
 
     if (!lat || !lon) {
-      throw Error('Must include latitude and longitude in delete');
+      throw new Error('Must include latitude and longitude in delete');
     }
 
     var distance = Geo.distanceCalculation(lat, lon, this.pivotLat, this.pivotLon);

@@ -20,6 +20,12 @@ describe('GeoManager', function() {
       });
     });
 
+    it('should throw error if no lat/lon provided', function() {
+      expect(function() {
+        GeoManager.add();
+      }).to.throw();
+    });
+
     it('should allow adding to the managed list', function() {
       var item = {
         lat: 35.73,
@@ -60,6 +66,12 @@ describe('GeoManager', function() {
       });
 
       GeoManager.add(addedItem);
+    });
+
+    it('should throw error if no lat/lon provided', function() {
+      expect(function() {
+        GeoManager.findClosest();
+      }).to.throw();
     });
 
     it('should find closest managed geo locations', function() {
@@ -128,6 +140,12 @@ describe('GeoManager', function() {
       });
 
       GeoManager.add(addedItem);
+    });
+
+    it('should throw error if no lat/lon provided', function() {
+      expect(function() {
+        GeoManager.delete();
+      }).to.throw();
     });
 
     it('should allow deletion of existing geo location', function() {
