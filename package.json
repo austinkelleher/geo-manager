@@ -1,0 +1,37 @@
+{
+  "name": "geo-manager",
+  "version": "1.0.0",
+  "description": "Geolocation Manager for fast lookup, insertion, and deletion.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --ui bdd --reporter spec ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/austinkelleher/geo-manager"
+  },
+  "keywords": [
+    "geo",
+    "geolocation",
+    "manager",
+    "latidude",
+    "longitude"
+  ],
+  "author": "Austin Kelleher, a@alk.im",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/austinkelleher/geo-manager/issues"
+  },
+  "homepage": "https://github.com/austinkelleher/geo-manager",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5",
+    "uuid": "^2.0.1"
+  },
+  "dependencies": {
+    "geo-core": "^1.1.1"
+  }
+}
